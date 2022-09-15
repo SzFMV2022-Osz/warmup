@@ -47,7 +47,7 @@ namespace AutomatedCar
         private PolylineGeometry GetControlledCarBoundaryBox()
         {
             StreamReader reader = new StreamReader(Assembly.GetExecutingAssembly()
-    .GetManifestResourceStream($"AutomatedCar.Assets.worldobject_polygons.json"));
+                .GetManifestResourceStream($"AutomatedCar.Assets.worldobject_polygons.json"));
             string json_text = reader.ReadToEnd();
             dynamic stuff = JObject.Parse(json_text);
             var points = new List<Point>();
@@ -62,7 +62,7 @@ namespace AutomatedCar
         private void AddDummyCircleTo(World world)
         {
             var circle = new Circle(200, 200, "circle.png", 20);
-            
+
             circle.Width = 40;
             circle.Height = 40;
             circle.ZIndex = 20;
@@ -74,7 +74,7 @@ namespace AutomatedCar
         private AutomatedCar CreateControlledCar(int x, int y, int rotation, string filename)
         {
             var controlledCar = new Models.AutomatedCar(x, y, filename);
-            
+
             controlledCar.Geometry = this.GetControlledCarBoundaryBox();
             controlledCar.RawGeometries.Add(controlledCar.Geometry);
             controlledCar.Geometries.Add(controlledCar.Geometry);
