@@ -35,7 +35,6 @@
             double[] distances = new double[2];
             distances[0] = x;
             distances[1] = y;
-            ;
             return distances;
         }
 
