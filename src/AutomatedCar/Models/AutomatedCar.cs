@@ -1,6 +1,7 @@
 namespace AutomatedCar.Models
 {
     using Avalonia.Media;
+    using global::AutomatedCar.SystemComponents.Sensors;
     using SystemComponents;
 
     public class AutomatedCar : Car
@@ -21,6 +22,8 @@ namespace AutomatedCar.Models
         public int Velocity { get; set; }
 
         public PolylineGeometry Geometry { get; set; }
+
+        public DummySensor DummySensor { get; set; }
 
         /// <summary>Starts the automated cor by starting the ticker in the Virtual Function Bus, that cyclically calls the system components.</summary>
         public void Start()
