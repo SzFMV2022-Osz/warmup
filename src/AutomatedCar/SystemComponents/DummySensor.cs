@@ -10,24 +10,19 @@
 
     public class DummySensor : SystemComponent
     {
-        VirtualFunctionBus bus;
-        WorldObject car;
-
-        public DummySensor(VirtualFunctionBus virtualFunctionBus, WorldObject car) : base(virtualFunctionBus)
+        DummyPacket dummyPacket;
+        public DummySensor(VirtualFunctionBus virtualFunctionBus) : base(virtualFunctionBus)
         {
-            bus = virtualFunctionBus;
-            this.car = car;
+            dummyPacket = new DummyPacket();
+            virtualFunctionBus.DummyPacket = dummyPacket;
         }
 
         public override void Process()
         {
             WorldObject worldObject = World.Instance.WorldObjects.First();
-            DummyPacket newPacket = new DummyPacket()
-            {
-                DistanceX = Math.Abs(car.X - worldObject.X),
-                DistanceY = Math.Abs(car.Y - worldObject.Y)
-            };
-            bus.DummyPacket = newPacket;
+            AutomatedCar car = World.Instance.ControlledCar;
+            dummyPacket.DistanceX = Math.Abs(car.X - worldObject.X);
+            dummyPacket.DistanceY = Math.Abs(car.Y - worldObject.Y);
         }
     }
 }
