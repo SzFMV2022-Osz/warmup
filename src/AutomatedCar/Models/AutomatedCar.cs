@@ -1,6 +1,7 @@
 namespace AutomatedCar.Models
 {
     using Avalonia.Media;
+    using global::AutomatedCar.SystemComponents.Packets;
     using SystemComponents;
 
     public class AutomatedCar : Car
@@ -12,9 +13,12 @@ namespace AutomatedCar.Models
         {
             this.virtualFunctionBus = new VirtualFunctionBus();
             this.ZIndex = 10;
+            dummySensor = new DummySensor(this.virtualFunctionBus, this);
         }
 
         public VirtualFunctionBus VirtualFunctionBus { get => this.virtualFunctionBus; }
+
+        public DummySensor dummySensor { get;}
 
         public int Revolution { get; set; }
 
