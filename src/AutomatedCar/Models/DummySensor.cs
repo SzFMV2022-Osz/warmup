@@ -11,6 +11,7 @@
         public DummySensor(VirtualFunctionBus virtualFunctionBus) : base(virtualFunctionBus)
         {
             dummyPacket = new DummyPacket();
+            virtualFunctionBus.DummyPacket = dummyPacket;
         }
 
         public override void Process()
