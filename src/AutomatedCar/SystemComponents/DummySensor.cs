@@ -1,11 +1,8 @@
 ﻿namespace AutomatedCar.SystemComponents;
 
-using Avalonia;
-using Avalonia.Data;
 using Models;
-using Packets;
-using SkiaSharp;
 using System;
+using System.Numerics;
 
 public class DummySensor : SystemComponent
 {
@@ -31,14 +28,14 @@ public class DummySensor : SystemComponent
     }
 
     // TODO: Handle nulls correctly. Right now I don't know the expected behavior, so we simply return 0. This could cause troubles later.
-    private Point CalculateDistance(WorldObject source, WorldObject destination)
+    private Vector2 CalculateDistance(WorldObject? source, WorldObject? destination)
     {
         if (source == null || destination == null)
         {
-            return new Point(0, 0);
+            return new Vector2(0, 0);
         }
 
-        return new Point(
+        return new Vector2(
             Math.Abs(source.X - destination.X),
             Math.Abs(source.Y - destination.Y));
     }
