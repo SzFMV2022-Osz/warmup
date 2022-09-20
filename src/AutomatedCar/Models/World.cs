@@ -11,6 +11,8 @@
     using Helpers;
     using Visualization;
     using Avalonia.Media;
+    using System.Runtime.CompilerServices;
+    using System.Linq;
 
     public class World
     {
