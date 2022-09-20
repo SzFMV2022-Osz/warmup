@@ -7,11 +7,13 @@ namespace AutomatedCar.SystemComponents
     {
         private List<SystemComponent> components = new List<SystemComponent>();
 
-        public IReadOnlyDummyPacket DummyPacket { get; set; }
+        // Right now we don't need the abstraction of an interface, we don't need to make the properties read-only.
+        public DummyPacket DummyPacket { get; set; }
 
         public void RegisterComponent(SystemComponent component)
         {
             this.components.Add(component);
+            this.DummyPacket = new DummyPacket();
         }
 
         protected override void Tick()
