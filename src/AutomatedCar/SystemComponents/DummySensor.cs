@@ -16,6 +16,7 @@
         public DummySensor(VirtualFunctionBus virtualFunctionBus, AutomatedCar car) : base(virtualFunctionBus)
         {
             this.DummyPacket = new DummyPacket();
+            this.virtualFunctionBus.DummyPacket = this.DummyPacket;
             this.car = car;
         }
 
