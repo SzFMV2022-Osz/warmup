@@ -1,4 +1,4 @@
-namespace AutomatedCar.SystemComponents.Packets
+namespace AutomatedCar.SystemComponents.Packets.Dummy
 {
     using ReactiveUI;
 
@@ -9,14 +9,14 @@ namespace AutomatedCar.SystemComponents.Packets
 
         public int DistanceX
         {
-            get => this.distanceX;
-            set => this.RaiseAndSetIfChanged(ref this.distanceX, value);
+            get => distanceX;
+            set => this.RaiseAndSetIfChanged(ref distanceX, value);
         }
 
         public int DistanceY
         {
-            get => this.distanceY;
-            set => this.RaiseAndSetIfChanged(ref this.distanceY, value);
+            get => distanceY;
+            set => this.RaiseAndSetIfChanged(ref distanceY, value);
         }
     }
 }

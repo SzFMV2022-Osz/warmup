@@ -1,5 +1,5 @@
-namespace AutomatedCar.SystemComponents.Packets
-    {
+namespace AutomatedCar.SystemComponents.Packets.Dummy
+{
     public interface IReadOnlyDummyPacket
     {
         int DistanceX { get; }
