@@ -30,11 +30,6 @@ namespace AutomatedCar.SystemComponents.Packets.Dummy
             this.car = car;
         }
 
-        /// <summary>
-        /// Gets dummy packet.
-        /// </summary>
-        public IReadOnlyDummyPacket DummyPacket => this.DummyPacket;
-
         /// <inheritdoc/>
         public override void Process()
         {
