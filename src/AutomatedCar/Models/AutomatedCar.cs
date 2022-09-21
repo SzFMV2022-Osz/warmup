@@ -5,6 +5,7 @@ namespace AutomatedCar.Models
 
     public class AutomatedCar : Car
     {
+        private DummySensor dummySensor;
         private VirtualFunctionBus virtualFunctionBus;
 
         public AutomatedCar(int x, int y, string filename)
@@ -12,6 +13,7 @@ namespace AutomatedCar.Models
         {
             this.virtualFunctionBus = new VirtualFunctionBus();
             this.ZIndex = 10;
+            this.dummySensor = new DummySensor(this.virtualFunctionBus);
         }
 
         public VirtualFunctionBus VirtualFunctionBus { get => this.virtualFunctionBus; }
