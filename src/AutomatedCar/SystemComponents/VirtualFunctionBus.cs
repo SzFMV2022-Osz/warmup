@@ -2,6 +2,7 @@ namespace AutomatedCar.SystemComponents
 {
     using AutomatedCar.SystemComponents.Packets;
     using System.Collections.Generic;
+    using System.Diagnostics;
 
     public class VirtualFunctionBus : GameBase
     {
