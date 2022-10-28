@@ -12,6 +12,7 @@ namespace AutomatedCar.Models
         {
             this.virtualFunctionBus = new VirtualFunctionBus();
             this.ZIndex = 10;
+            this.InputManager = new InputManager(this.virtualFunctionBus);
             this.DummySensor = new DummySensor(this.virtualFunctionBus);
         }
 
@@ -19,9 +20,24 @@ namespace AutomatedCar.Models
 
         public DummySensor DummySensor { get; set; }
 
+        public InputManager InputManager { get; set; }
+
         public int Revolution { get; set; }
 
         public int Velocity { get; set; }
+
+        public int DistanceX {
+            get {
+                return VirtualFunctionBus.DummyPacket.DistanceX; 
+            } 
+        }
+        public int DistanceY
+        {
+            get
+            {
+                return VirtualFunctionBus.DummyPacket.DistanceY;
+            }
+        }
 
         public PolylineGeometry Geometry { get; set; }
 

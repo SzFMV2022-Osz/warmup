@@ -28,6 +28,8 @@
                 this.DummyPacket.DistanceX = World.Instance.ControlledCar.X - circle.X;
                 this.DummyPacket.DistanceY = World.Instance.ControlledCar.Y - circle.Y;
             }
+
+            Debug.WriteLine(virtualFunctionBus.InputPacket.PrevKey.ToString() + " - " + virtualFunctionBus.InputPacket.ActualKey.ToString());
         }
     }
 }

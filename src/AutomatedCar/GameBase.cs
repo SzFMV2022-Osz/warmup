@@ -5,7 +5,7 @@ namespace AutomatedCar
 
     public abstract class GameBase
     {
-        public const int TicksPerSecond = 60;
+        public const int TicksPerSecond = 10;
 
         private readonly DispatcherTimer timer =
             new DispatcherTimer() { Interval = new TimeSpan(0, 0, 0, 0, 1000 / TicksPerSecond) };
